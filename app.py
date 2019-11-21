@@ -1,11 +1,12 @@
 from eve import Eve
 from flask import render_template
+from os import environ as env
 
 ## check eve docs:
 ## https://docs.python-eve.org/en/stable/features.html
 
 settings = {
-    'MONGO_HOST': 'localhost',
+    'MONGO_HOST': env['MONGO_URL'] if env['MONGO_URL'] else 'localhost',
     'MONGO_PORT': 27017,
     'MONGO_DBNAME': 'monker',
     'ALLOW_UNKNOWN' : True,

@@ -65,7 +65,7 @@ BUYER     = 'buyer'
 SELLER    = 'seller'
 
 ## global variables
-DB_CLIENT = pymongo.MongoClient('mongodb://localhost:27017/')
+DB_CLIENT = pymongo.MongoClient(env['MONGO_URL'] if env['MONGO_URL'] else 'mongodb://localhost:27017/')
 DB        = DB_CLIENT.monker
 
 class MetaNotFound        (Exception): pass

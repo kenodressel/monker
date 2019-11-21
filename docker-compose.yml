@@ -1,0 +1,20 @@
+version: '3'
+
+services:
+  monker:
+    build: .
+    restart: always
+    environment:
+      - MONGO_URL=mongodb
+      - ASSET=ETH
+      - QUOTE=BTC
+    env_file:
+      - "docker.env"
+  mongodb:
+    image: mongo:latest
+    restart: always
+    volumes:
+      - mongodb:/data/db
+
+volumes:
+  mongodb:
