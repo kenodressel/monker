@@ -54,3 +54,14 @@ My idea to keep the web interface simple and extremely secure, is to use no web
 authentication system, but instead it would require an SSH connection and port forwarding
 to the server machine.
 
+# Docker
+
+To run your monker instance in docker simply create a file called `docker.env`:
+```
+API_KEY=XXX
+API_SECRET=XXX
+```
+You can additionally modifiy the asset and quote in the `docker-compose.yml`. Finally run
+```
+docker-compose up
+```
